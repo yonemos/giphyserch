@@ -4,6 +4,7 @@ import ReactDom from "react-dom";
 import axios from "axios";
 
 import { Search } from "./components/Search";
+import "./styles.css";
 
 class App extends React.Component {
   constructor() {
@@ -35,7 +36,7 @@ class App extends React.Component {
     //リクエスト先のURLを作る
     const search = title;
     const key = "TjTZuEOFWOpvYl98kL6xJQfInMwnpS9z";
-    const limit = "10";
+    const limit = "30";
     const url = `https://api.giphy.com/v1/gifs/search?q=${search}&api_key=${key}&limit=${limit}`;
 
     //axios request

@@ -2,3 +2,21 @@
   font-family: sans-serif;
   text-align: center;
 }
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background: pink;
+}
+ul {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  list-style: none;
+}
+li {
+  width: 10%;
+}
+img {
+  width: 100%;
+}
