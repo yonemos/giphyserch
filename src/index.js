@@ -1,6 +1,9 @@
 import React from "react";
 import ReactDom from "react-dom";
+
 import axios from "axios";
+
+import { Search } from "./components/Search";
 
 class App extends React.Component {
   constructor() {
@@ -19,15 +22,18 @@ class App extends React.Component {
   }
   render() {
     console.log(this.state.gifUrlList);
-    return <div>{this.renderImageList(this.state.gifUrlList)}</div>;
-  }
-  componentDidMount() {
-    this.giphyapi();
+    return (
+      <div>
+        <h1>gif検索するやつ</h1>
+        <Search search={this.giphyapi} />
+        {this.renderImageList(this.state.gifUrlList)}
+      </div>
+    );
   }
 
-  giphyapi() {
+  giphyapi = title => {
     //リクエスト先のURLを作る
-    const search = "cat";
+    const search = title;
     const key = "TjTZuEOFWOpvYl98kL6xJQfInMwnpS9z";
     const limit = "10";
     const url = `https://api.giphy.com/v1/gifs/search?q=${search}&api_key=${key}&limit=${limit}`;
@@ -50,7 +56,7 @@ class App extends React.Component {
       //img.src = imageUrl;
       //document.body.appendChild(img);
     });
-  }
+  };
 }
 
 ReactDom.render(<App />, document.getElementById("root"));
