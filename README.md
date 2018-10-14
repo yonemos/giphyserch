@@ -1,2 +1,0 @@
-# giphyserch
-Created with CodeSandbox
